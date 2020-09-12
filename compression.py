@@ -3,7 +3,7 @@ Here is the demo how compression works.
 We take ceratin word in the form of string and compress/decompress it.
 character take atleast 8bits depending upon the machine but can be denoted by certain bits.
 This is the main principle of this algorithm.
-We take word(excluded symbols, numbers and blank spaces) and convert into bits.
+We take word(included symbols, numbers and blank spaces) and convert into bits.
 we get atleast the 50% less occupied compressed data.
 """
 
