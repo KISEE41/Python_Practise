@@ -31,11 +31,11 @@ class CompressData:
 
         
     def _compress(self, word: str) -> int:
-        word_in_set: Set = set(word)
         self.number_of_bits: int = round(log(len(word_in_set)) / log(2) + 0.5)
         self.bit_string: int = 1
         self.dict_letters: Dict = self.assign_bits(word_in_set)
-        
+        word_in_set: Set = set(word)
+            
         for letter in word:
             self.bit_string <<= self.number_of_bits
             self.bit_string |= int(self.dict_letters[letter], 2)
@@ -74,6 +74,6 @@ if __name__ == "__main__":
     print(f"\n\nYour original word: {original}")
     print(f"Size of original: {getsizeof(original)}")
     compress: CompressData = CompressData(original)
-    print("\n------------------------------------------------------------------------------------------------")
+    print("\n-" * 100)
     print(f"original and decommpredded are the same: {original.upper() == compress._decompress().upper()}") 
     print(f"{(getsizeof(compress.bit_string)/getsizeof(original)) * 100}% reduction of space.") 
