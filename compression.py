@@ -74,6 +74,6 @@ if __name__ == "__main__":
     print(f"\n\nYour original word: {original}")
     print(f"Size of original: {getsizeof(original)}")
     compress: CompressData = CompressData(original)
-    print("\n-" * 100)
+    print("\n-----------------------------------------------------------------------------------------------")
     print(f"original and decommpredded are the same: {original.upper() == compress._decompress().upper()}") 
     print(f"{(getsizeof(compress.bit_string)/getsizeof(original)) * 100}% reduction of space.") 
